@@ -70,7 +70,7 @@
          "kind": "ImageStream",
          "apiVersion": "v1",
          "metadata": {
-            "name": "springboot-sti"
+            "name": "nodejs-custom-sti"
          },
          "spec": {
             "dockerImageRepository": "",
