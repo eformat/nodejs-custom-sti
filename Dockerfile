@@ -4,8 +4,7 @@ FROM registry.access.redhat.com/library/rhel7
 # Install from Official NodJS RPM repository
 RUN rpm -Uvh https://rpm.nodesource.com/pub_5.x/el/7/x86_64/nodesource-release-el7-1.noarch.rpm
 
-RUN yum --disablerepo=* --enablerepo=rhel-7-server-rpms --enablerepo=rhel-7-server-extras-rpms" \
-    install -y nodejs tar && \
+RUN yum install -y nodejs tar && \
     mkdir -p /opt/openshift && \
     mkdir -p /opt/app-root/source && chmod -R a+rwX /opt/app-root/source && \
     mkdir -p /opt/s2i/destination && chmod -R a+rwX /opt/s2i/destination && \
