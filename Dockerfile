@@ -1,11 +1,11 @@
 # nodejs-custom-sti
-FROM registry.access.redhat.com/rhel7.2
+FROM registry.access.redhat.com/library/rhel7
 
 # Install from Official NodJS RPM repository
 RUN rpm -Uvh https://rpm.nodesource.com/pub_5.x/el/7/x86_64/nodesource-release-el7-1.noarch.rpm
 
-RUN subscription-manager repos --disable="*"
-RUN subscription-manager repos --enable="rhel-7-server-rpms" --enable="rhel-7-server-extras-rpms"
+RUN yum-config-manager --disable="*"
+RUN yum-config-manager --enable="rhel-7-server-rpms" --enable="rhel-7-server-extras-rpms"
 
 RUN yum install -y nodejs tar && \
     mkdir -p /opt/openshift && \
